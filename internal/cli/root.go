@@ -15,6 +15,10 @@ var Yes bool
 var rootCmd = cobra.Command{
 	Use:   "dots",
 	Short: "A tool to manage dotfiles with symlinks",
+	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
+		// TODO: load config here
+		return nil
+	},
 	RunE: func(cmd *cobra.Command, args []string) error {
 		cmd.Help()
 
